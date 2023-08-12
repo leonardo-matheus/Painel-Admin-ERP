@@ -1,44 +1,44 @@
-// Cores para os modos claro e escuro
-const colorsLight = {
+// colorsLight2colorsLight2Cores para os modos claro e escuro
+const colorsLight2 = {
     background: '#F9F9F9',
     text: '#342e37',
     lineReceitas: '#4BC0C0', 
     lineDespesas: '#FF6384', 
 };
 
-const colorsDark = {
+const colorsDark2 = {
     background: '#0C0C1E',
     text: '#FBFBFB',
     lineReceitas: '#4BC0C0', 
     lineDespesas: '#FF6384', 
 };
 
-let isDarkMode = false;
-let chartGraph; // Variável para armazenar o gráfico
+let isDarkMode2 = false;
+let chartGraphSemanal; // Variável para armazenar o gráfico
 
 // Atualizar as cores do gráfico
 function updateChartColors() {
-    const colors = isDarkMode ? colorsDark : colorsLight;
+    const colors = isDarkMode2 ? colorsDark : colorsLight2;
 
-    if (chartGraph) {
-        chartGraph.data.datasets[0].borderColor = colors.lineReceitas; // Receitas
-        chartGraph.data.datasets[0].backgroundColor = colors.background;
-        chartGraph.data.datasets[1].borderColor = colors.lineDespesas; // Despesas
-        chartGraph.data.datasets[1].backgroundColor = colors.background;
-        chartGraph.options.plugins.legend.labels.color = colors.text;
-        chartGraph.options.plugins.title.color = colors.text;
-        chartGraph.options.scales.x.grid.color = colors.text;
-        chartGraph.options.scales.y.grid.color = colors.text;
-        chartGraph.options.title.text = "Relatório Financeiro Anual"; // Atualize o título
-        chartGraph.update();
+    if (chartGraphSemanal) {
+        chartGraphSemanal.data.datasets[0].borderColor = colors.lineReceitas; // Receitas
+        chartGraphSemanal.data.datasets[0].backgroundColor = colors.background;
+        chartGraphSemanal.data.datasets[1].borderColor = colors.lineDespesas; // Despesas
+        chartGraphSemanal.data.datasets[1].backgroundColor = colors.background;
+        chartGraphSemanal.options.plugins.legend.labels.color = colors.text;
+        chartGraphSemanal.options.plugins.title.color = colors.text;
+        chartGraphSemanal.options.scales.x.grid.color = colors.text;
+        chartGraphSemanal.options.scales.y.grid.color = colors.text;
+        chartGraphSemanal.options.title.text = "Relatório Financeiro Anual"; // Atualize o título
+        chartGraphSemanal.update();
     }
 }
 
 // Aguarde o carregamento do DOM para iniciar o gráfico
 document.addEventListener('DOMContentLoaded', function () {
-    const ctx = document.getElementsByClassName("line-chart")[0].getContext("2d");
+    const ctx = document.getElementsByClassName("line-chart-week")[0].getContext("2d");
     
-    chartGraph = new Chart(ctx, {
+    chartGraphSemanal = new Chart(ctx, {
         type: 'line',
         data: {
             labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
@@ -46,15 +46,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 label: "Receitas",
                 data: [164, 2530, 1169, 3240, 3465, 1910, 1791, 1805, 1890, 3721, 1765, 420],
                 borderWidth: 5,
-                borderColor: colorsLight.lineReceitas,
-                backgroundColor: colorsLight.background,
+                borderColor: colorsLight2.lineReceitas,
+                backgroundColor: colorsLight2.background,
             },
             {
                 label: "Despesas",
                 data: [164, 1418, 867, 2175, 2668, 1313, 1084, 1427, 1101, 2331, 179],
                 borderWidth: 5,
-                borderColor: colorsLight.lineDespesas,
-                backgroundColor: colorsLight.background,
+                borderColor: colorsLight2.lineDespesas,
+                backgroundColor: colorsLight2.background,
             }],
         },
         options: {
@@ -62,28 +62,28 @@ document.addEventListener('DOMContentLoaded', function () {
                 display: true,
                 fontSize: 20,
                 text: "Relatório Financeiro Anual",
-                color: colorsLight.text,
+                color: colorsLight2.text,
             },
             scales: {
                 x: {
                     grid: {
-                        color: colorsLight.text,
+                        color: colorsLight2.text,
                     },
                 },
                 y: {
                     grid: {
-                        color: colorsLight.text,
+                        color: colorsLight2.text,
                     },
                 },
             },
             plugins: {
                 legend: {
                     labels: {
-                        color: colorsLight.text,
+                        color: colorsLight2.text,
                     },
                 },
                 title: {
-                    color: colorsLight.text,
+                    color: colorsLight2.text,
                 },
             },
         },
@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', function () {
     switchMode.addEventListener('change', function () {
         if (this.checked) {
             document.body.classList.add('dark');
-            isDarkMode = true;
+            isDarkMode2 = true;
         } else {
             document.body.classList.remove('dark');
-            isDarkMode = false;
+            isDarkMode2 = false;
         }
         updateChartColors();
     });

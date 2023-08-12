@@ -590,3 +590,17 @@ body {
 		min-width: 420px;
 	}
 }
+
+.chart-area {
+	width: 100%;
+	height: auto;
+	background-color: var(--light);
+	border-radius: 5px 10px 5px 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.spaceBetween {
+	height: 50px;
+}

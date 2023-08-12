@@ -1,0 +1,1 @@
+/ * ! Definir função para minimizar os gráficos (alterar tipo) */
