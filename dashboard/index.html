@@ -10,7 +10,6 @@
 	<!--CSS -->
 	<link rel="stylesheet" href="/css/main.min.css">
     <!--Gráficos-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.3/chart.min.js" integrity="sha512-fMPPLjF/Xr7Ga0679WgtqoSyfUoQgdt8IIxJymStR5zV3Fyb6B3u/8DcaZ6R6sXexk5Z64bCgo2TYyn760EdcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 
@@ -138,25 +137,34 @@
             </ul>
             <!--FIM DOS CARDS-->
 
+            <!--GRÁFICOS-->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Gráfico</h6>
                 </div>
                 <div class="card-body">
                     <div class="chart-area">
-                        <canvas id="myAreaChart"></canvas>
+                        <canvas class="line-chart"></canvas>
                     </div>
                     <hr>
-                    Styling for the area chart can be found in the
-                    <code>/js/demo/chart-area-demo.js</code> file.
                 </div>
             </div>
+            <!--FIM DOS GRÁFICOS-->
 
         </main>
     </section>
     
-    <!--SCRIPTS-->
-    <script src="./vendor/chart.js/Chart.js"></script>
+<!--SCRIPTS-->
+
+
+    <!--Chart.Js-->    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="./js/fluxodecaixa.js"></script>
+    </body>
+    </html>
+
+    <!--JQuery-->   
     <script src="./js/main.js"></script>
+    <script type="module" src="/dashboard/js/fluxodecaixa.js"></script>
 </body>
 </html>

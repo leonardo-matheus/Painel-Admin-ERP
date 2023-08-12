@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.min.css">
+</head>
+<body>
+    
+    <canvas class="line-chart"></canvas>
+
+
+
+
+    <script src="./dashboard/vendor/chart.js/Chart.min.js"></script>
+    
+    <script>
+        var ctx = document.getElementsByClassName("line-chart");
+
+        // Type, Data e Options
+        var chartGraph = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["Jan" , "Fev" , "Mar" , "Abr" , "Mai" , "Jun" , "Jul" , "Ago" , "Set" , "Out" , "Nov" , "Dez"],
+                datasets: [{
+                    label: "Receitas",
+                    data: [164, 2530, 1169, 3240, 3465, 1910, 1791, 1805, 1890, 3721 , 1765, 420],
+                    borderWidth: 5,
+                    borderColor: '#4BC0C0',
+                    backgroundColor: 'transparent',
+                },
+                {
+                    label: "Despesas",
+                    data: [164, 1418, 867, 2175, 2668, 1313, 1084, 1427, 1101, 2331, 179],
+                    borderWidth: 5,
+                    borderColor: '#FF6384',
+                    backgroundColor: 'transparent',
+                },
+                ]
+            }, 
+            options: {
+                title: {
+                    display: true,
+                    fontSize: 20,
+                    text: "Relatório Financeiro Anual"
+                },
+                labels: {
+                    fontStyle: "bold"
+                },
+            }
+        });
+    </script>
+
+
+</body>
+</html>
