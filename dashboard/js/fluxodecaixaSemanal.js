@@ -41,17 +41,17 @@ document.addEventListener('DOMContentLoaded', function () {
     chartGraphSemanal = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+            labels: ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"],
             datasets: [{
                 label: "Receitas",
-                data: [164, 2530, 1169, 3240, 3465, 1910, 1791, 1805, 1890, 3721, 1765, 420],
+                data: [34,66,240,760,360,600,0],
                 borderWidth: 5,
                 borderColor: colorsLight2.lineReceitas,
                 backgroundColor: colorsLight2.background,
             },
             {
                 label: "Despesas",
-                data: [164, 1418, 867, 2175, 2668, 1313, 1084, 1427, 1101, 2331, 179],
+                data: [12,30,67,350,180,260,0,],
                 borderWidth: 5,
                 borderColor: colorsLight2.lineDespesas,
                 backgroundColor: colorsLight2.background,
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         options: {
             title: {
                 display: true,
-                fontSize: 20,
+                fontSize: 25,
                 text: "Relatório Financeiro Anual",
                 color: colorsLight2.text,
             },
@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
             plugins: {
                 legend: {
                     labels: {
+                        fontSize: 25,
                         color: colorsLight2.text,
                     },
                 },
